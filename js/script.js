@@ -7,6 +7,32 @@ function printMessage(msg){
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
+
+function counter(counterPlayer) {
+  clearCounter();
+  var div = document.createElement('div');
+  div.innerHTML = counterPlayer;
+  document.getElementById('resultPlayer').appendChild(div);
+}
+
+function counter2(counterComputer) {
+  clearCounter2();
+  var div = document.createElement('div');
+  div.innerHTML = counterComputer;
+  document.getElementById('resultComputer').appendChild(div);
+}
+
+function clearCounter() {
+  document.getElementById('resultPlayer').innerHTML = '';
+}
+function clearCounter2() {
+  document.getElementById('resultComputer').innerHTML = '';
+}
+
+var counterPlayer, counterComputer;
+counterPlayer = 0;
+counterComputer = 0;
+
 var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
 
 /**
@@ -25,9 +51,6 @@ function getMoveName(argMoveId) {
     return 'kamień';
   }
 }
-
-
-
 
 var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest, x;
 
@@ -58,12 +81,17 @@ function displayResult(argPlayerMove, argComputerMove) {
   || (argPlayerMove == 'nożyce' && argComputerMove == 'papier') 
   || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce')) {
     printMessage('Wygrywasz!');
+    counterPlayer++;
+    counter('Wygrane Gracza: ' + counterPlayer);
   } else if (argPlayerMove == argComputerMove) {
     printMessage('Remis!');
   } else {
     printMessage('Przegrywasz :(');
+    counterComputer++;
+    counter2('Wygrane Komputera: ' + counterComputer)
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+  
 }
 
 buttonPaper = document.getElementById('button-paper');
