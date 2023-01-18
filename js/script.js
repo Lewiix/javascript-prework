@@ -1,5 +1,5 @@
 function printMessage(msg){
-	var div = document.createElement('div');
+	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
@@ -10,14 +10,14 @@ function clearMessages(){
 
 function counter(counterPlayer) {
   clearCounter();
-  var div = document.createElement('div');
+  let div = document.createElement('div');
   div.innerHTML = counterPlayer;
   document.getElementById('resultPlayer').appendChild(div);
 }
 
 function counter2(counterComputer) {
   clearCounter2();
-  var div = document.createElement('div');
+  let div = document.createElement('div');
   div.innerHTML = counterComputer;
   document.getElementById('resultComputer').appendChild(div);
 }
@@ -29,11 +29,8 @@ function clearCounter2() {
   document.getElementById('resultComputer').innerHTML = '';
 }
 
-var counterPlayer, counterComputer;
-counterPlayer = 0;
-counterComputer = 0;
-
-var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+let argComputerMove, argMoveId, argPlayerMove, computerMove, 
+playerInput, playerMove, randomNumber, counterPlayer = 0, counterComputer = 0;
 
 /**
  * Describe this function...
@@ -52,7 +49,7 @@ function getMoveName(argMoveId) {
   }
 }
 
-var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest, x;
+let argButtonName, buttonPaper, buttonRock, buttonScissors;
 
 /**
  * Describe this function...
