@@ -1,5 +1,5 @@
 function printMessage(msg){
-	let div = document.createElement('div');
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
@@ -10,14 +10,14 @@ function clearMessages(){
 
 function counter(counterPlayer) {
   clearCounter();
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.innerHTML = counterPlayer;
   document.getElementById('resultPlayer').appendChild(div);
 }
 
 function counter2(counterComputer) {
   clearCounter2();
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.innerHTML = counterComputer;
   document.getElementById('resultComputer').appendChild(div);
 }
@@ -29,8 +29,8 @@ function clearCounter2() {
   document.getElementById('resultComputer').innerHTML = '';
 }
 
-let argComputerMove, argMoveId, argPlayerMove, computerMove, 
-playerInput, playerMove, randomNumber, counterPlayer = 0, counterComputer = 0;
+let computerMove, playerInput, playerMove, randomNumber, 
+counterPlayer = 0, counterComputer = 0;
 
 /**
  * Describe this function...
@@ -49,7 +49,7 @@ function getMoveName(argMoveId) {
   }
 }
 
-let argButtonName, buttonPaper, buttonRock, buttonScissors;
+//let buttonPaper, buttonRock, buttonScissors;
 
 /**
  * Describe this function...
@@ -91,9 +91,9 @@ function displayResult(argPlayerMove, argComputerMove) {
   
 }
 
-buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
-buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-buttonScissors = document.getElementById('button-scissors');
+const buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
